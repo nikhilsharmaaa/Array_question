@@ -1,0 +1,28 @@
+https://leetcode.com/problems/matrix-diagonal-sum/description/
+class Solution {
+    public int diagonalSum(int[][] mat) {
+      int temp = 0;
+      int n = mat.length ;
+      for (int row=0;row<mat.length;row++){
+          for (int col =0;col<mat.length;col++){
+              
+                  if (row ==col ){
+                      temp = mat[row][col] +temp;
+                  } 
+                      
+                    if ( col ==n-1-row){
+                         temp = mat[row][col] +temp;
+                        
+                    }
+                  
+              }
+
+              
+          }
+          if (n%2!=0){
+              temp= temp - mat[n/2][n/2];
+          }
+       
+      return temp;  
+    }
+}
