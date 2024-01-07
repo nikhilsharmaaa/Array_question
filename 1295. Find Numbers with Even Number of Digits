@@ -1,0 +1,25 @@
+class Solution {
+     int even(int num){
+            int digit =0;
+            while  (num>0){
+                digit++;
+                num = num/10;
+                 }
+            if (digit%2==0){
+                return 1 ;
+            }
+            return -1;
+        }
+    public int findNumbers(int[] nums) {
+        
+        int count =0;
+        for (int num :nums){
+            if (even(num) == 1){
+                count++;
+            }
+
+        }
+        return count;
+        
+    }
+}
