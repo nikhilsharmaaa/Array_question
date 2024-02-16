@@ -1,0 +1,29 @@
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        // just create  two boolean arrys .. to store where your value is to be zero .. 
+         int m = matrix.length;
+         int  n = matrix[0].length;
+        boolean[] zerorow =  new boolean[m];
+        boolean[] zerocol = new boolean[n];
+         // now traveser throw  matrix  and find  where your element should be zero .. 
+
+        for ( int i =0  ; i< m ; i++){
+            for ( int j =0 ; j<n; j++){
+                if ( matrix[i][j] == 0){
+                    // make that index true in row and coloumn .. 
+                    zerorow[i] = true ;
+                    zerocol[j] = true ;
+
+                }
+            }
+
+        }
+        for ( int i=0 ; i<m ; i++){
+            for ( int j =0 ; j<n;j++){
+                if ( zerorow[i] || zerocol[j]){
+                    matrix[i][j] =0;
+                }
+            }
+        }
+    }
+}
